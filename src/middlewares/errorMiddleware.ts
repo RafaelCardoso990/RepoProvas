@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
 export default function errorHandlerMiddleware(error: any, req: Request, res: Response, next: NextFunction) {
-    
+    console.log(error)
     if (error.response) return res.sendStatus(error.response.status)
     if (error.status) return res.status(error.status).send(error.message)
     res.status(500).send(error)

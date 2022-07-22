@@ -7,6 +7,20 @@ async function insertTest(test: testsTypeData){
     await testsRepository.insertTest(test)
 }
 
+async function getTestsByDisciplines(query: string){
+    const disciplines = await testsRepository.getTestsByDisciplines(query)
+    return disciplines
+}
+
+async function getTestsByTeachers(query: string){
+    const tests = await testsRepository.getTestsByTeachers(query)
+    return tests
+}
+
+
+
 export default {
-    insertTest
+    insertTest,
+    getTestsByDisciplines,
+    getTestsByTeachers
 }

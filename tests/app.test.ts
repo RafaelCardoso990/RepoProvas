@@ -42,7 +42,7 @@ describe("Authentication tests", () =>{
 
     it("Authentication must be done using JWT tokens.",async () => { 
         const token = await loginAndReceiveToken()          
-        expect(token)
+        expect(token).not.toBeNull()
     })
     
     

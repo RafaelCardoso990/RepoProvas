@@ -5,6 +5,10 @@
     "moduleResolution": "node",
     "outDir": "dist"
   },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
   "ts-node": {
     "esm": true
   }

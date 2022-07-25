@@ -6,6 +6,7 @@ import authRepositoy from "../repositories/authRepositoy.js"
 export type userTypeData = Omit<Users, "id">
 
 async function insertUser(user: userTypeData){
+    
     const encryptedPassword = bcrypt.hashSync(user.password, 10)
 
     const userData = {

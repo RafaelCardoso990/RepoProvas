@@ -5,6 +5,6 @@ import { validateToken } from "../middlewares/validateToken.js"
 
 const categoriesRouter = Router()
 
-categoriesRouter.get("/categories", categoryController.getCategories)
+categoriesRouter.get("/categories", validateToken, categoryController.getCategories)
 
 export default categoriesRouter

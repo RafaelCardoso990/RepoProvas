@@ -4,8 +4,8 @@ import { validateToken } from "../middlewares/validateToken.js"
 
 const testsRouter = Router()
 
-testsRouter.post("/tests", validateToken,testsController.insertTest)
-testsRouter.get("/tests", testsController.getTests)
+testsRouter.post("/tests",validateToken, testsController.insertTest)
+testsRouter.get("/tests", validateToken, testsController.getTests)
 
 
 export default testsRouter

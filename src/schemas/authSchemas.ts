@@ -4,7 +4,7 @@ import { userTypeData } from "../services/authServices.js";
 export const signUpSchema = joi.object({
   email: joi.string().email().required(),
   password: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
-  passwordConfirmation: joi.ref("password")
+  passwordConfirmation: joi.string().required()
   
 });
 

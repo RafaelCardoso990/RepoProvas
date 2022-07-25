@@ -34,23 +34,20 @@ async function getTestsByDisciplines(query: any){
 
 async function getTestsByTeachers(query: any){
     return await prisma.teachers.findMany({
-        orderBy:{name: "asc"},
-        select:{ name: true,
-            TeachersDisciplines:{  
-                select:{ 
-                    discipline: {
-                        select:{ name: true}
-                    },
+        select:{
+            name : true,
+            TeachersDisciplines:{
+                select:{
                     Tests:{ 
-                        select:{name: true,
-                            category:{
-                                 
-                            },
+                        select:{ name: true,
+                                 pdfUrl: true,
+                                category: true,
                         }
                     }
                 }
             }
-        }
+        },
+
     })    
 }
 
